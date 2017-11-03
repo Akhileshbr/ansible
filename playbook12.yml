@@ -1,0 +1,13 @@
+
+
+---
+- name: Installing/uninstalling packages
+  hosts: all
+  tasks:
+   - name: Installing or uninstalling packages
+     apt:
+      name: "{{a}}"
+      state: "{{b}}"
+      update_cache: "{{c}}"
+...
+

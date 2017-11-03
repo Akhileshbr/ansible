@@ -1,0 +1,8 @@
+
+playbook: playbook52.yml
+
+  play #1 (192.168.60.101): using stats module	TAGS: []
+    tasks:
+      finding stats	TAGS: []
+      debugging	TAGS: []
+      creating files	TAGS: []

@@ -1,0 +1,13 @@
+
+
+---
+- name: calling multiple playbooks and using varaibles
+  hosts: 192.168.60.101
+  tasks:
+   - include: "{{item}}"
+     with_items:
+      - playbook38.yml
+      - playbook39.yml
+
+
+...

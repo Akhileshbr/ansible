@@ -1,0 +1,13 @@
+
+
+---
+- name: Create users 
+  hosts: webserver
+  tasks:
+   - name: Create user and assign homedir,passwd etc
+     user:
+      name: "{{user}}"
+      password: "{{password}}"
+      home: "{{home}}"
+      shell: "{{shell}}"
+...

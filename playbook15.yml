@@ -1,0 +1,10 @@
+---
+- name: Package installation/uninstallation 
+  hosts: webserver
+  tasks:
+   - name: Installing packages
+     apt:
+      name: "{{a}}"
+      state: "{{b}}"
+      update_cache: "{{c}}"
+...

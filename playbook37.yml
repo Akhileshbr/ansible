@@ -1,0 +1,14 @@
+
+
+
+---
+- name: using varaibles with include
+  hosts: 192.168.60.101
+  tasks:
+   - include:
+      playbook36.yml
+     vars:
+      package: tree
+      state: absent
+      file: file1
+      filestate: touch

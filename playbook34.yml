@@ -1,0 +1,8 @@
+
+
+---
+- copy:
+   src: /home/vagrant/file1
+   dest: /home/vagrant/file1
+...
+  

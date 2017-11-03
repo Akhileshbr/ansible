@@ -1,0 +1,21 @@
+
+
+
+---
+- name: handler exapmle
+  hosts: 192.168.60.101
+  tasks:
+   - name: copy content into index.html
+     copy:
+      content: "Sample data to be sent to index.html"
+      dest: "/var/www/html/index.html"
+     notify:
+      - restart_apache2
+  handlers:
+   - name: restart_apache2
+     service:
+      name: apache2
+      state: restarted
+
+
+...

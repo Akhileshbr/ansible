@@ -1,0 +1,14 @@
+---
+- name: Package installation/uninstallation 
+  hosts: all
+  vars:
+   - a: apache2
+   - b: present
+   - c: yes
+  tasks:
+   - name: Installing packages
+     apt:
+      name: "{{a}}"
+      state: "{{b}}"
+      update_cache: "{{c}}"
+...

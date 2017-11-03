@@ -1,0 +1,11 @@
+
+
+---
+- name: calling multiple play books
+  hosts: 192.168.60.101
+  tasks:
+   - include: "{{item}}"
+     with_items:
+      - playbook33.yml
+      - playbook34.yml
+...

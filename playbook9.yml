@@ -1,0 +1,10 @@
+---
+- name: Using global variables
+  hosts: all
+  tasks:
+   - name: Installing or unistalling packages
+     apt:
+      name: "{{a}}"
+      state: "{{b}}"
+      update_cache: "{{c}}"
+...

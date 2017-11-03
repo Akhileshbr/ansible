@@ -1,0 +1,9 @@
+
+
+
+- apt:
+   name: "{{a}}"
+   state: "{{b}}"
+- file:
+   name: "{{c}}"
+   state: "{{d}}"

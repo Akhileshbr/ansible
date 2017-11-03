@@ -1,0 +1,10 @@
+
+
+
+---
+- file:
+   name: "{{filename}}"
+   state: "{{filestate}}"
+...
+
+   

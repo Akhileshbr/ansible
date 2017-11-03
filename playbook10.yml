@@ -1,0 +1,15 @@
+
+---
+- name: For creating files or directories on managed nodes
+  hosts: all
+  tasks:
+   - name: Creating files/dir
+     file:
+      name: "{{a}}"
+      state: "{{b}}"
+      owner: "{{c}}"
+      group: "{{d}}"
+      mode: "{{e}}"
+
+...
+

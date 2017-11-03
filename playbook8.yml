@@ -1,0 +1,19 @@
+---
+- name: Installing apache2 on webserver group
+  hosts: webserver
+  tasks:
+   - name: Installing apache2
+     apt:
+      name: apache2
+      state: present
+      update_cache: yes
+- name: Installing git on lb and dbserver groups
+  hosts: lb,dbserver
+  tasks:
+   - name: Installing git
+     apt:
+      name: git
+      state: present 
+      update_cache: yes
+...
+

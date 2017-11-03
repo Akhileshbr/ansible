@@ -1,0 +1,21 @@
+
+
+
+--- 
+- name: Creating users and capturing username and home dir
+  hosts: all
+  tasks:
+   - name: Creating users
+     user:
+      name: intelliq
+      home: /home/vagrant/intelliq
+   - name: Capturing user info
+     shell: grep intelliq /etc/passwd | cut -d ":" -f 1,6 > file1
+   - name: Fetching files
+     fetch:
+      src: /home/vagrant/file1
+      dest: /home/vagrant
+
+
+
+...

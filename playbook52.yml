@@ -1,0 +1,23 @@
+
+
+---
+- name: using stats module
+  hosts: 192.168.60.101
+  gather_facts: False
+  tasks:
+   - name: finding stats
+     stat:
+      path: "/home/vagrant"
+     register: results
+   - name: debugging
+     debug:
+      var: results
+   - name: creating files
+     file:
+      name: /home/vagrant/file1234
+      state: touch
+     when:
+      results.stat.isdir==true
+
+
+...

@@ -1,0 +1,21 @@
+
+
+---
+- name: user profile
+  hosts: 192.168.60.101
+  tasks:
+   - name: finding user info
+     shell: grep sai  /etc/passwd > /home/vagrant/file89
+     register: results
+   - name: debugging the results
+     debug:
+      var: results
+  handlers: 
+    
+
+
+  # - name: user management
+   #  user:
+    #  name: rohit
+     # password: intelliq
+...

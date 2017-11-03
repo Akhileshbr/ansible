@@ -1,0 +1,21 @@
+---
+- name: tagging modules
+  hosts: 192.168.60.101
+  tasks:
+   - name: installing apache2
+     apt:
+      name: apache2
+      state: present
+     tags:
+      - apache2_installed
+   - name: uninstalling git
+     apt:
+      name: git
+      state: absent
+     tags:
+      - git_uninstalled
+   - name: installing tree
+     apt:
+      name: tree
+      state: present
+...

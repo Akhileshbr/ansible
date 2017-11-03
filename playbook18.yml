@@ -1,0 +1,13 @@
+
+
+---
+- name: Coping files 
+  hosts: 192.168.60.104
+  tasks:
+   - name: Copying files into one node
+     copy:
+      src: "{{source}}"
+      dest: "{{dest}}"
+      owner: "{{owner}}"
+      mode: "{{mode}}"
+...

@@ -1,0 +1,13 @@
+
+
+---
+- file:
+   name: /home/vagrant/file1
+   state: touch
+- apt:
+   name: tree
+   state: absent
+
+
+
+...

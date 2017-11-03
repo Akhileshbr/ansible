@@ -1,0 +1,14 @@
+
+
+---
+- name: using varaible with include
+  hosts: 192.168.60.101
+  tasks:
+   - include:
+      playbook29.yml
+     vars:
+      a: git
+      b: absent
+      c: /home/vagrant/file1
+      d: touch
+

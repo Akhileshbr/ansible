@@ -1,0 +1,4 @@
+user: hari
+password: intelliq
+home: /home/vagrant/hari
+shell: /bin/bash

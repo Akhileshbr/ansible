@@ -1,0 +1,16 @@
+
+
+---
+- name: using stats module
+  hosts: 192.168.60.101
+  tasks:
+   - name: finding stats
+     shell: grep shafi1  /etc/passwd | wc -l
+     register: a
+   - debug: var=a
+   - user:
+      name: shafi1
+      passwd: xyz
+     when:
+      a.stdout==0
+...

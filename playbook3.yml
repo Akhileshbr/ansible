@@ -1,0 +1,22 @@
+
+
+--- 
+- name: Creating users and fetching their info
+  hosts: all
+  become: yes
+  tasks:
+   - name: Creating users
+     user:
+      name: sai
+      home: /home/vagrant/sai
+      shell: /bin/bash
+   - name: Capturing usernames and home directories
+     shell: grep sai /etc/passwd  | cut -d ":" -f 1,6 > file1
+   - name: Fetchinf files
+     fetch:
+      src: /home/vagrant/file1
+      dest: /home/vagrant
+
+
+...
+

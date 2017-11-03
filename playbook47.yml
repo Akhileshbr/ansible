@@ -1,0 +1,20 @@
+
+---
+- name: implementing tags
+  hosts: 192.168.60.101
+  tasks:
+   - name: 
+     apt:
+      name: tree
+      state: present
+     tags: tree_installation
+   - name:
+     apt:
+      name: git
+      state: absent
+     tags: git_uninstallation
+   - name:
+     apt:
+      name: apache2
+      state: present
+...

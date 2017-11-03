@@ -1,0 +1,6 @@
+
+
+source: /home/vagrant/file1
+dest: /home/vagrant/file2
+owner: root
+mode: 777

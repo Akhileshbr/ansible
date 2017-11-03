@@ -1,0 +1,16 @@
+
+
+---
+- name: Installing packages 
+  hosts: 192.168.60.101
+  tasks:
+   - name: Install packages
+     apt:
+      name: "{{item.a}}"
+      state: "{{item.b}}"
+      update_cache: "{{item.c}}"
+     with_items:
+      - {a: tree,b: present,c: yes}
+      - {a: git,b: absent,c: no}
+      - {a: apache2,b: latest,c: no}
+...

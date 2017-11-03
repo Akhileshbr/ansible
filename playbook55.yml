@@ -1,0 +1,19 @@
+
+---
+- name: user creation
+  hosts: 192.168.60.101
+  tasks:
+   - name: finding user home dir
+     stat:
+      path: /home/rohit
+     register: results
+   - name: creating user
+     user:
+      name: rohit
+      password: intelliq
+     when:
+      results.stat.exists==False
+
+
+
+...

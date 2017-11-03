@@ -1,0 +1,25 @@
+
+
+---
+- name: Creating users and copying files 
+  hosts: all
+  tasks:
+   - name: Creating users and assigning home dir,shell etc
+     user:
+      name: "{{item.a}}"
+      password: "{{item.b}}"
+      home: "{{item.c}}"
+      shell: "{{item.d}}"
+     with_items:
+      - {a: sai,b: intelliq,c: /home/vagrant/sai,d: /bin/bash}
+      - {a: anu,b: intelliq,c: /home/anu,d: /bin/bash}
+   - name: Copy readme file
+     copy:
+      src: "{{item.a}}"
+      dest: "{{item.b}}"
+      owner: "{{item.c}}"
+      mode: "{{item.d}}"
+     with_items:
+      - {a: /home/vagrant/readme,b: /home/vagrant/sai,c: sai,d: 700}
+      - {a: /home/vagrant/readme,b: /home/anu,c: anu,d: 600}
+...

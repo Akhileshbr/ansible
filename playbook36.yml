@@ -1,0 +1,13 @@
+
+
+---
+- apt:
+   name: "{{package}}"
+   state: "{{state}}"
+- file:
+   name: "{{file}}"
+   state: "{{filestate}}"
+
+
+
+...

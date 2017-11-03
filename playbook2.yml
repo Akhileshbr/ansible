@@ -1,0 +1,19 @@
+---
+- name: For creating directories and copying files
+  hosts: all
+  tasks:
+   - name: Creating directory
+     file:
+      name: mydir1
+      state: directory
+   - name: Creating  files
+     file:
+      name: mydir1/file1
+      state: touch
+   - name: Sending content
+     copy:
+      content: "Sample data"
+      dest: mydir1/file1
+
+
+...
